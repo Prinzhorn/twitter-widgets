@@ -5,6 +5,9 @@ Wrapper for dynamically loading the Twitter widgets script (follow button, embed
 npm install twitter-widgets
 ```
 
+Can be used with browserify or global `window.TwitterWidgetsLoader`.
+
+
 ```js
 var TwitterWidgetsLoader = require('twitter-widgets');
 

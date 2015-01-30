@@ -48,7 +48,7 @@
 		}
 	};
 
-	if (typeof module !== 'undefined' && module.exports) {
+	if(typeof module !== 'undefined' && module.exports) {
 		module.exports = TwitterWidgetsLoader;
 	} else {
 		window.TwitterWidgetsLoader = TwitterWidgetsLoader;
