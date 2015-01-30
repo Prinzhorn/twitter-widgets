@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>TwitterWidgetsLoader demo</title>
+</head>
+
+<body>
+	<div id="tweet"></div>
+	<div id="follow"></div>
+
+	<script type="text/javascript" src="index.js"></script>
+
+	<script type="text/javascript">
+	TwitterWidgetsLoader.load(function(twttr) {
+		twttr.widgets.createTweet('20', document.getElementById('tweet'));
+	});
+
+	TwitterWidgetsLoader.load(function(twttr) {
+		twttr.widgets.createFollowButton('Prinzhorn', document.getElementById('follow'));
+	});
+	</script>
+</body>
+
+</html>
