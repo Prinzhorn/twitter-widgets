@@ -19,3 +19,10 @@ TwitterWidgetsLoader.load(function(twttr) {
 	twttr.widgets.createFollowButton('Prinzhorn', document.getElementById('follow'));
 });
 ```
+
+## Changelog
+
+### 1.0.0
+
+* Always call the callback asynchronously
+* Fixed a bug with infinite recursion when nesting load() calls

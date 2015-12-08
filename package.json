@@ -1,6 +1,6 @@
 {
   "name": "twitter-widgets",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Wrapper for dynamically loading the Twitter widgets script (follow button, embedded tweets etc.)",
   "main": "index.js",
   "scripts": {
