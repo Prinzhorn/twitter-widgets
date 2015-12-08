@@ -6,10 +6,14 @@
 		interval: 50,
 
 		load: function(callback) {
+			var _this = this;
+
 			this.listeners.push(callback);
 
 			if(window.twttr && window.twttr.widgets) {
-				this.done();
+				setTimeout(function() {
+					_this.done();
+				});
 				return;
 			}
 
@@ -32,19 +36,17 @@
 				return this.done();
 			}
 
-			var self = this;
+			var _this = this;
 
 			setTimeout(function() {
-				self.poll();
+				_this.poll();
 			}, this.interval);
 		},
 
 		done: function() {
-			for(var listenerIndex = 0; listenerIndex < this.listeners.length; listenerIndex++) {
-				this.listeners[listenerIndex](window.twttr);
+			while(this.listeners.length) {
+				this.listeners.pop()(window.twttr);
 			}
-
-			this.listeners.length = 0;
 		}
 	};
 

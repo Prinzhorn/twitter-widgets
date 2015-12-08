@@ -9,19 +9,47 @@
 </head>
 
 <body>
-	<div id="tweet"></div>
+	<h1>TwitterWidgetsLoader demo</h1>
+
+	<h2>First tweet (first load() call)</h2>
+	<div id="tweet1"></div>
+
+	<h2>Second tweet (second load() call, queued after first)</h2>
+	<div id="tweet2"></div>
+
+	<h2>Third tweet (load() was called inside another load() handler)</h2>
+	<div id="tweet3"></div>
+
+	<h2>Fourth tweet (load() was called after 5s delay)</h2>
+	<div id="tweet4"></div>
+
+	<h2>Follow button</h2>
 	<div id="follow"></div>
 
 	<script type="text/javascript" src="index.js"></script>
 
 	<script type="text/javascript">
 	TwitterWidgetsLoader.load(function(twttr) {
-		twttr.widgets.createTweet('20', document.getElementById('tweet'));
+		twttr.widgets.createFollowButton('Prinzhorn', document.getElementById('follow'));
 	});
 
 	TwitterWidgetsLoader.load(function(twttr) {
-		twttr.widgets.createFollowButton('Prinzhorn', document.getElementById('follow'));
+		twttr.widgets.createTweet('20', document.getElementById('tweet1'));
 	});
+
+	TwitterWidgetsLoader.load(function(twttr) {
+		twttr.widgets.createTweet('20', document.getElementById('tweet2'));
+
+		TwitterWidgetsLoader.load(function(twttr) {
+			twttr.widgets.createTweet('20', document.getElementById('tweet3'));
+		});
+	});
+
+	setTimeout(function() {
+		TwitterWidgetsLoader.load(function(twttr) {
+			twttr.widgets.createTweet('20', document.getElementById('tweet4'));
+		});
+	}, 5 * 1000);
 	</script>
 </body>
 
