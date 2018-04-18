@@ -26,6 +26,9 @@
 			var script = document.createElement('script');
 			script.type = 'text/javascript';
 			script.src = this.src;
+			script.addEventListener('error', function() {
+				TwitterWidgetsLoader.done(new Error('Twitter widgets JS failed to load. Is there an ad blocker enabled?'));
+			});
 			document.body.appendChild(script);
 
 			this.poll();
@@ -43,9 +46,9 @@
 			}, this.interval);
 		},
 
-		done: function() {
+		done: function(error) {
 			while(this.listeners.length) {
-				this.listeners.pop()(window.twttr);
+				this.listeners.pop()(error, window.twttr);
 			}
 		}
 	};
