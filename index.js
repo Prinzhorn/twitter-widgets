@@ -8,7 +8,9 @@
 		load: function(callback) {
 			var _this = this;
 
-			this.listeners.push(callback);
+			if(callback) {
+				this.listeners.push(callback);
+			}
 
 			if (window.twttr && window.twttr.widgets) {
 				setTimeout(function() {
