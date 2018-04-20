@@ -12,7 +12,7 @@
 
 			if (window.twttr && window.twttr.widgets) {
 				setTimeout(function() {
-					_this.done();
+					_this._done();
 				});
 				return;
 			}
@@ -27,26 +27,26 @@
 			script.type = 'text/javascript';
 			script.src = this.src;
 			script.addEventListener('error', function() {
-				_this.done(new Error('Twitter widgets JS failed to load. Is there an ad blocker enabled?'));
+				_this._done(new Error('Twitter widgets JS failed to load. Is there an ad blocker enabled?'));
 			});
 			document.body.appendChild(script);
 
-			this.poll();
+			this._poll();
 		},
 
-		poll: function() {
+		_poll: function() {
 			if (window.twttr && window.twttr.widgets) {
-				return this.done();
+				return this._done();
 			}
 
 			var _this = this;
 
 			setTimeout(function() {
-				_this.poll();
+				_this._poll();
 			}, this.interval);
 		},
 
-		done: function(error) {
+		_done: function(error) {
 			while (this.listeners.length) {
 				this.listeners.pop()(error, window.twttr);
 			}
