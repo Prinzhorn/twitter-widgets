@@ -27,7 +27,7 @@
 			script.type = 'text/javascript';
 			script.src = this.src;
 			script.addEventListener('error', function() {
-				TwitterWidgetsLoader.done(new Error('Twitter widgets JS failed to load. Is there an ad blocker enabled?'));
+				_this.done(new Error('Twitter widgets JS failed to load. Is there an ad blocker enabled?'));
 			});
 			document.body.appendChild(script);
 
