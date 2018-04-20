@@ -28,13 +28,19 @@ TwitterWidgetsLoader.load(function(err, twttr) {
 
 	twttr.widgets.createFollowButton('Prinzhorn', document.getElementById('follow'));
 });
+
+//The callback is optional.
+TwitterWidgetsLoader.load();
+// at some point later `window.twttr` will be defined.
 ```
 
 ## Changelog
 
 ### 2.0.0
 
-* Error-first callback
+* Make the callback parameter optional (#1)
+* Error-first callback (#2)
+* Always load the script via `https://` instead of protocol-relative
 
 ### 1.0.0
 
