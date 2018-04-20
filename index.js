@@ -10,14 +10,14 @@
 
 			this.listeners.push(callback);
 
-			if(window.twttr && window.twttr.widgets) {
+			if (window.twttr && window.twttr.widgets) {
 				setTimeout(function() {
 					_this.done();
 				});
 				return;
 			}
 
-			if(this.loading) {
+			if (this.loading) {
 				return;
 			}
 
@@ -35,7 +35,7 @@
 		},
 
 		poll: function() {
-			if(window.twttr && window.twttr.widgets) {
+			if (window.twttr && window.twttr.widgets) {
 				return this.done();
 			}
 
@@ -47,15 +47,15 @@
 		},
 
 		done: function(error) {
-			while(this.listeners.length) {
+			while (this.listeners.length) {
 				this.listeners.pop()(error, window.twttr);
 			}
 		}
 	};
 
-	if(typeof module !== 'undefined' && module.exports) {
+	if (typeof module !== 'undefined' && module.exports) {
 		module.exports = TwitterWidgetsLoader;
 	} else {
 		window.TwitterWidgetsLoader = TwitterWidgetsLoader;
 	}
-}(window));
+})(window);

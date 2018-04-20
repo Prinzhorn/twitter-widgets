@@ -10,15 +10,17 @@
     "type": "git",
     "url": "https://github.com/Prinzhorn/twitter-widgets.git"
   },
-  "keywords": [
-    "twitter",
-    "widgets",
-    "wrapper"
-  ],
+  "keywords": ["twitter", "widgets", "wrapper"],
   "author": "Alexander Prinzhorn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Prinzhorn/twitter-widgets/issues"
   },
-  "homepage": "https://github.com/Prinzhorn/twitter-widgets"
+  "homepage": "https://github.com/Prinzhorn/twitter-widgets",
+  "devDependencies": {
+    "prettier": "^1.12.1"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
 }
