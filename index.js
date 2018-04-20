@@ -1,6 +1,6 @@
 (function(window) {
 	var TwitterWidgetsLoader = {
-		src: '//platform.twitter.com/widgets.js',
+		src: 'https://platform.twitter.com/widgets.js',
 		loading: false,
 		listeners: [],
 		interval: 50,
