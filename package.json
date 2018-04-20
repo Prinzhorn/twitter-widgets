@@ -1,6 +1,6 @@
 {
   "name": "twitter-widgets",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Wrapper for dynamically loading the Twitter widgets script (follow button, embedded tweets etc.)",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "https://github.com/Prinzhorn/twitter-widgets.git"
   },
   "keywords": ["twitter", "widgets", "wrapper"],
-  "author": "Alexander Prinzhorn",
+  "author": "Alexander Prinzhorn <alexander@prinzhorn.it> (https://www.prinzhorn.it/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Prinzhorn/twitter-widgets/issues"
