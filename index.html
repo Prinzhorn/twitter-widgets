@@ -29,24 +29,49 @@
 	<script type="text/javascript" src="index.js"></script>
 
 	<script type="text/javascript">
-	TwitterWidgetsLoader.load(function(twttr) {
+	TwitterWidgetsLoader.load(function(err, twttr) {
+		if(err) {
+			console.error(err);
+			return;
+		}
+
 		twttr.widgets.createFollowButton('Prinzhorn', document.getElementById('follow'));
 	});
 
-	TwitterWidgetsLoader.load(function(twttr) {
+	TwitterWidgetsLoader.load(function(err, twttr) {
+		if(err) {
+			console.error(err);
+			return;
+		}
+
 		twttr.widgets.createTweet('20', document.getElementById('tweet1'));
 	});
 
-	TwitterWidgetsLoader.load(function(twttr) {
+	TwitterWidgetsLoader.load(function(err, twttr) {
+		if(err) {
+			console.error(err);
+			return;
+		}
+
 		twttr.widgets.createTweet('20', document.getElementById('tweet2'));
 
-		TwitterWidgetsLoader.load(function(twttr) {
+		TwitterWidgetsLoader.load(function(err, twttr) {
+			if(err) {
+				console.error(err);
+				return;
+			}
+
 			twttr.widgets.createTweet('20', document.getElementById('tweet3'));
 		});
 	});
 
 	setTimeout(function() {
-		TwitterWidgetsLoader.load(function(twttr) {
+		TwitterWidgetsLoader.load(function(err, twttr) {
+			if(err) {
+				console.error(err);
+				return;
+			}
+
 			twttr.widgets.createTweet('20', document.getElementById('tweet4'));
 		});
 	}, 5 * 1000);
